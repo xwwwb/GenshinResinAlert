@@ -34,4 +34,9 @@ def main() -> None:
     data = request(url, params=body, cookie=cookie).text
     data = json.loads(data)
     resin = data.get('data').get('current_resin')
-    return f"现有{resin}个树脂"
+
+    seconds = int(data.get('data').get('resin_recovery_time'))
+    m, s = divmod(seconds, 60)
+    h, m = divmod(m, 60)
+    message = f"现有{resin}个树脂，预计回满需要{h}小时{m}分钟。"
+    return message
