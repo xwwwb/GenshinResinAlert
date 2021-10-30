@@ -36,7 +36,7 @@ docker build -t genshinresinalert:1.0 .
 ```
 ### 4. 启动容器
 ```shell
-docker run -d -p 5000:5000 genshinresinalert
+docker run -d -p 5000:5000 genshinresinalert:1.0
 ```
 ### 5. 访问测试
 
